@@ -18,6 +18,7 @@ Here is the **exam-oriented solution** for **Question 7 (Write Short Notes)**. S
 
 **Block Diagram:**
 `[ Physical Parameter ] -> [ Sensor ] -> [ Signal Conditioning ] -> [ Microcontroller (ADC/GPIO) ]`
+![ss](image-2.png)
 
 ---
 
@@ -64,6 +65,7 @@ Both concepts allow a system to perform multiple operations, but they function a
 ### **💡 Neplish Explainer (Core Concept Bujhne Tarika)**
 
 **1. Sensor Interfacing:**
+
 *   **Concept:** Sensor ra Microcontroller ko milan karaune kaam.
 *   **Analogy:** Sensor le "Analog" bhasa bolxa (Voltage), Microcontroller le "Digital" bhasa bujhxa (0/1). Bich ma **ADC** (Translator) rakhera kura bujhaune kaam nai Interfacing ho.
 
