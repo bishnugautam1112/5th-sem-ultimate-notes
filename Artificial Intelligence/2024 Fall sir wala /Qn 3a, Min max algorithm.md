@@ -6,7 +6,7 @@ Here is the **"Slay" Material for 2024 Q3a**. This is a combination of theory an
 ---
 
 ### **2024 Q3 a) What is the idea of Mini-Max search algorithm? Explain how alpha-beta pruning works with reference to the following game tree. Assume the root node is MAX.**
-
+![alt text](image-2.png)
 #### 📝 High-Yield Exam Note (Write this to get full marks)
 
 **1. Idea of Mini-Max Search Algorithm:**
