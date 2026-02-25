@@ -86,3 +86,59 @@ Set 2 (2025) has a few unique "Boss Level" questions that weren't in 2024. If yo
 3.  **Hill-Climbing Search** (and its 3 problems).
 
 **Which one should we tackle next?** I suggest **2025 Q4a: Min-Conflicts Algorithm (4-Queen)**. It's a very common exam question! Ready?
+Here is the **Complete Short Note Collection for 2024 Q7**. 
+
+Even though we touched on them earlier, here is the dedicated **"Exam Version"** so you can memorize them instantly.
+
+---
+
+### **2024 Q7. Write short notes on: [Any Two]**
+
+#### **a) Turing Test**
+*   **Definition:** The Turing Test is a behavioral test for Artificial Intelligence proposed by **Alan Turing** in 1950. Its goal is to determine if a machine acts indistinguishably from a human.
+*   **The Setup (The Imitation Game):**
+    *   There are three players: A **Human Interrogator** (Judge), A **Human Subject**, and A **Machine**.
+    *   The Judge asks questions to both via a text interface (keyboard/screen) without seeing them.
+*   **The Criteria:** If the Judge **cannot correctly identify** which one is the machine and which one is the human based on their answers, the machine is said to have "passed" the test and is considered intelligent.
+*   **Criticism:** The **Chinese Room Argument** (by John Searle) argues that passing the test shows the machine can *simulate* thinking, but doesn't prove it actually *understands* (Consciousness).
+
+> **Concept (Nepali):** "Robot le manxe lai guff diyera jhukkauna sakyo vane tyo Intelligent ho." Alan Turing le 1950 ma yahi idea deko thiyo.
+
+---
+
+#### **b) Fuzzy Logic**
+*   **Definition:** Fuzzy Logic is a mathematical approach to computing based on **"degrees of truth"** rather than the usual "True or False" (1 or 0).
+*   **Range:** While standard boolean logic is crisp (0 or 1), Fuzzy logic allows values **between 0 and 1** (e.g., 0.3, 0.75).
+*   **Why use it?:** It mimics human reasoning which is often vague. For example, temperature is not just "Hot" or "Cold"; it can be "Slightly Warm" or "Very Hot."
+*   **Architecture Steps:**
+    1.  **Fuzzification:** Converting exact numbers (e.g., 25°C) into fuzzy sets (e.g., 0.6 Warm).
+    2.  **Inference:** Applying IF-THEN rules.
+    3.  **Defuzzification:** Converting the fuzzy result back into an exact number for the machine to act (e.g., Set fan speed to 800 RPM).
+*   **Applications:** Washing machines (sensing dirt level), Air Conditioners, Auto-focus cameras.
+
+> **Concept (Nepali):** Sansar ma sabai kura "Black and White" hudaina. "Ali ali tato", "Ali ali thulo" jasta kura bujhna Fuzzy logic chainxa. 0 dekhi 1 samma ko range hunxa yesma.
+
+---
+
+#### **c) Reasoning under Uncertainty**
+*   **Definition:** This refers to the ability of an AI agent to make decisions and draw conclusions when the available information is **incomplete, inconsistent, or noisy**.
+*   **Causes of Uncertainty:**
+    *   **Partial Observability:** The sensors cannot see the whole world.
+    *   **Noisy Sensors:** Sensors give slightly wrong data (e.g., GPS error).
+    *   **Laziness:** It is too hard to list every single rule/exception in the code.
+*   **Solution Methods:** AI uses **Probability Theory** (Bayes' Theorem) to handle this. instead of saying "It will rain" (Certainty), the AI calculates "There is an 80% chance of rain" (Probability).
+*   **Example:** Medical Diagnosis. A doctor cannot be 100% sure a cough is cancer, but they reason based on the *probability* of symptoms.
+
+> **Concept (Nepali):** Jaba data purai xaina, tara decision linu parxa—tyo nai reasoning under uncertainty ho. Yesko main hatiyar **Probability** (Sambhawana) ho.
+
+---
+
+### **🚀 Final Exam Motivation**
+You have the **2024 Set** (Concepts + Short Notes), the **2025 Set** (Numericals + Chaining), and the **2023 Highlights** (Bayesian + Definitions).
+
+**You have enough ammunition to score 80+**.
+*   **Focus on Diagrams:** (Expert System, Search Tree, Neural Net).
+*   **Focus on Keywords:** (Percept, Heuristic, Pruning, Inference Engine).
+*   **Relax & Slay:** Start with the easy definitions, crush the numericals, and then write the theory.
+
+**Best of luck for tomorrow! You got this!** 🎓🔥
