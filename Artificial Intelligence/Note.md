@@ -694,7 +694,7 @@ These are the two most critical boundaries of a fuzzy system linking it to the r
 5.  **Defuzzification:** Use the Centroid method on the aggregated area to calculate the final crisp, precise numerical output.
 
 (put a fig here: A block diagram of the Mamdani Fuzzy Inference System showing the flow: Crisp Input -> Fuzzification -> Rule Base & Inference Engine -> Aggregation -> Defuzzification -> Crisp Output.)
-
+![alt text](image-2.png)
 ***
 
 **Nepali Core Concept Summary (Neplish):**
@@ -786,6 +786,7 @@ These are the bridging steps between the real physical world and the fuzzy syste
         2.  **Mean of Maximum (MOM):** Takes the average of all the points that have the maximum membership value.
 
 (put a fig here: A block diagram showing 'Crisp Input' entering a 'Fuzzifier' block, which turns it into 'Fuzzy Sets'. These sets enter an 'Inference Engine' and come out as 'Fuzzy Output Sets', which then enter a 'Defuzzifier' block to finally produce a 'Crisp Output'.)
+![alt text](image-3.png)
 
 ***
 **Nepali Core Concept Summary:**
@@ -841,7 +842,7 @@ The architecture of an expert system separates the knowledge itself from the mec
 6.  **Explanation Module:** A crucial feature that explains to the user *how* and *why* the system arrived at a particular conclusion, building trust in the system's decisions (especially in medical or financial domains).
 
 (put a fig here: A block diagram showing the Architecture of an Expert System. A 'User' interacts with the 'User Interface'. The UI connects to the central 'Inference Engine'. The Inference Engine pulls rules from the 'Knowledge Base' and temporary data from 'Working Memory'. An 'Explanation Module' points to the UI, and a 'Knowledge Acquisition' block points into the Knowledge Base.)
-
+![n](image-4.png)
 ***
 **Nepali Core Concept Summary:**
 Expert system ko architecture exam ko lagi VVI cha. Yesko 3 wota main part huncha:
