@@ -142,3 +142,94 @@ A* Algorithm ekdum ramro ho tara yesko eutei thulo problem cha: **Memory (RAM) d
 2.  **Weighted A\*:** $h(n)$ lai kunai number (Weight $W$) le multiply gardine. Yesle algorithm lai ekdum fast banauncha tara aayeko answer 100% best (optimal) chai nahuna sakcha. Fast answer chaiyeko bela yo use huncha.
 3.  **Memory-Bounded A\* (IDA\*):** RAM full hune problem solve garna IDA* (Iterative Deepening A*) use garne. Yesle DFS ko jasto trick lagayera memory ekdum kam khancha ($O(bd)$).
 4.  **Min-Heap Data Structure:** OPEN list bata sabai vanda sasto $f(n)$ vako node khojna time lagcha. Yadi list ko sato 'Min-Heap' data structure use garyo vane, sasto node khojne kaam ekdum fast ($O(\log N)$) huncha.
+
+
+Here are the "Ready-to-Write" exam notes and solutions for questions 3(a) and 3(b), complete with Neplish explanations.
+
+---
+
+### **3. a) Represent following statements into predicate logic. [8 Marks]**
+
+**[Exam Ready Note]**
+
+**i) All Hindu are either loyal to Krishna or Shiva.**
+*   *Predicates:* $Hindu(x)$, $LoyalTo(x, y)$. *Constants:* $Krishna, Shiva$.
+*   **FOL:** $\forall x (Hindu(x) \rightarrow LoyalTo(x, Krishna) \lor LoyalTo(x, Shiva))$
+
+**ii) Every gardener like sun.**
+*   *Predicates:* $Gardener(x)$, $Likes(x, y)$. *Constant:* $Sun$.
+*   **FOL:** $\forall x (Gardener(x) \rightarrow Likes(x, Sun))$
+
+**iii) There is exactly two red mushrooms.**
+*   *Predicates:* $Mushroom(x)$, $Red(x)$.
+*   *(Logic Concept: We must state that there exist two distinct red mushrooms, $x$ and $y$, and if any other object $z$ is a red mushroom, it must be either $x$ or $y$.)*
+*   **FOL:** $\exists x \exists y (\; Mushroom(x) \land Red(x) \land Mushroom(y) \land Red(y) \land (x \neq y) \;\land\; \forall z (Mushroom(z) \land Red(z) \rightarrow (z = x \lor z = y)) \;)$
+
+**iv) Every parents are older than their childs.**
+*   *Predicates:* $Parent(x, y)$ (x is parent of y), $Older(x, y)$ (x is older than y).
+*   **FOL:** $\forall x \forall y (Parent(x, y) \rightarrow Older(x, y))$
+
+***
+
+**💡 Nepali Core Concept Summary (Neplish):**
+*   **i)** "All" aayeko le $\forall x$ ra $\rightarrow$ use garne. "Either OR" ko lagi $\lor$ (OR) sign use garne.
+*   **ii)** "Every" aayeko le $\forall x$ ra $\rightarrow$ use garne. Sun lai constant maneyra $Likes(x, Sun)$ lekhne.
+*   **iii)** Yo exam ko sabai vanda tricky question ho! "Exactly two" (thakkai dui wota) dekhauna ko lagi: Paila $x$ ra $y$ duitai Red Mushroom ho ra ti dube farak hun ($x \neq y$) vanne. Tespachi $\forall z$ lagayera yadi kunai tesro object ($z$) pani Red Mushroom ho bhane, tyo ki ta $x$ huna parcha ki ta $y$ huna parcha ($z = x \lor z = y$) vanera fix gardine.
+*   **iv)** "Every" cha so $\forall x \forall y$ use garne. Relation lai $Parent(x,y)$ manney, jasai meaning $x$ chai $y$ ko parent ho. Implies ($\rightarrow$) pachi $Older(x,y)$ lekhdine.
+
+---
+
+### **3. b) Define Bayes rule for probabilistic problem. [...] Calculate probability using Bayes theorem. [7 Marks]**
+
+**[Exam Ready Note]**
+
+**1. Definition of Bayes' Rule:**
+Bayes' theorem is a mathematical formula used in probability and artificial intelligence to calculate the **posterior probability** of an event based on prior knowledge of conditions that might be related to the event. It updates our belief in a hypothesis (cause) after observing new evidence (effect).
+
+The formula is:
+$$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
+*Where:*
+*   $P(A|B)$ = Posterior probability (Probability of Cause A given Effect B).
+*   $P(B|A)$ = Likelihood (Probability of Effect B given Cause A).
+*   $P(A)$ = Prior probability of Cause A.
+*   $P(B)$ = Marginal probability of Effect B.
+
+---
+**2. Solution to the Numerical Problem:**
+
+**Given Data:**
+*   Probability of Symptoms (Effect), $P(S) = \frac{1}{20} = 0.05$
+*   Probability of Disease (Cause), $P(D) = \frac{1}{45000}$
+*   Probability of Symptoms given Disease (Likelihood), $P(S|D) = 50\% = \frac{1}{2} = 0.50$
+
+**To Find:**
+*   Probability of Disease given Symptoms (Posterior), $P(D|S) = ?$
+
+**Applying Bayes' Theorem:**
+$$P(D|S) = \frac{P(S|D) \times P(D)}{P(S)}$$
+
+*Putting the values into the formula:*
+$$P(D|S) = \frac{0.50 \times \left(\frac{1}{45000}\right)}{\left(\frac{1}{20}\right)}$$
+
+$$P(D|S) = \frac{\left(\frac{1}{2}\right) \times \left(\frac{1}{45000}\right)}{\left(\frac{1}{20}\right)}$$
+
+$$P(D|S) = \frac{\left(\frac{1}{90000}\right)}{\left(\frac{1}{20}\right)}$$
+
+$$P(D|S) = \frac{1}{90000} \times \frac{20}{1}$$
+
+$$P(D|S) = \frac{20}{90000} = \frac{2}{9000} = \frac{1}{4500}$$
+
+$$P(D|S) \approx 0.000222 \text{ (or } 0.0222\%)$$
+
+**Answer:** The probability of having the disease given the symptoms is **1/4500** (approx 0.0222%).
+
+***
+
+**💡 Nepali Core Concept Summary (Neplish):**
+*   **Bayes Rule ko Definition:** Kunai pani event vaisakepachi (jastai symptom dekhiepachi), tesko main kaaran (disease) k ho vanera purano data use garera probability nikalne formula lai Bayes Theorem vaninxa. $P(Cause | Effect)$ nikalne kaam yesle garcha.
+*   **Numerical Trick:** Question maa value haru words ma ghumaera diyeko cha, tesaile paila carefully value tipne. 
+    *   $P(Symptoms)$ = $1/20$
+    *   $P(Disease)$ = $1/45000$
+    *   $P(Symptoms | Disease)$ = "probability of symptoms condition to disease" vanna leketko cha, yo $50\%$ wa $1/2$ ho.
+    *   Hamilai "Probability of disease condition to symptoms" nikalna vaneko cha, matlab $P(Disease | Symptoms)$.
+*   Aba sidhai formula ma fraction halera solve garne. $0.5$ lai $1/2$ banayera solve garda calculation ekdum fast ra mistake nabhai garna sakincha! Result $1/4500$ aauxa.
