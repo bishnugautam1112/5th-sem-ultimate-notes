@@ -71,3 +71,39 @@ To evaluate and compare the performance of different search algorithms, we use t
 *   **BFS vs DFS Compare:** 
     *   **BFS (Breadth-First Search):** Yesle line-by-line (level wise) check garcha. **Queue** use garcha. Answer fix bhetcha (Complete) ra best answer bhetcha (Optimal). Tara sabai level ko data save garna parne vayekole **Memory ekdum dherai khancha** ($O(b^d)$).
     *   **DFS (Depth-First Search):** Yesle euta bato samatepachi tesko chheu sammai pugcha. **Stack** use garcha. Memory ekdum **kam khancha** ($O(bm)$). Tara yo baango-tingo bato ma fasna sakcha (Not complete) ra bhetayeko answer sabai bhanda best nahuna pani sakcha (Not optimal).
+
+
+### **A* Search Algorithm (Short & Exam-Ready)**
+
+**[Exam Ready Note]**
+
+**Concept:** 
+A* (A-star) is the most popular **Informed Search Algorithm**. It finds the shortest path by combining the actual cost taken so far with the estimated cost to reach the goal. 
+It uses the evaluation function: **$f(n) = g(n) + h(n)$**
+*   **$g(n)$**: Actual cost from the start node to the current node $n$.
+*   **$h(n)$**: Heuristic (estimated) cost from the current node $n$ to the goal.
+*   **$f(n)$**: Total estimated cost of the path through node $n$.
+
+**Algorithm Steps:**
+1.  **Initialize** two lists: 
+    *   `OPEN` (Priority Queue to store unvisited nodes, sorted by lowest $f(n)$).
+    *   `CLOSED` (List to store already visited nodes).
+2.  Put the **Start Node** into the `OPEN` list.
+3.  **Loop** while the `OPEN` list is not empty:
+    *   **Pick** the node $n$ with the lowest $f(n)$ from `OPEN`.
+    *   If $n$ is the **Goal Node**, return SUCCESS and trace back the path.
+    *   Otherwise, remove $n$ from `OPEN` and put it in `CLOSED`.
+    *   **Expand** node $n$ (generate its neighbors/successors).
+    *   For each neighbor:
+        *   Calculate its $f(n) = g(n) + h(n)$.
+        *   If it is neither in `OPEN` nor `CLOSED`, add it to `OPEN`.
+        *   If it is already in `OPEN` but with a higher cost, **update** it with this new lower cost.
+4.  If `OPEN` becomes empty and the goal is not reached, return FAILURE.
+
+***
+
+**💡 Nepali Core Concept Summary (Neplish):**
+*   **A* (A-star) Algorithm** sabai vanda best search technique ho. Yesle andha vayera bato khojdaina, formula lagaucha: **$f(n) = g(n) + h(n)$**.
+*   **$g(n)$** bhaneko start point bata ahile ko thau samma aaudako actual kharcha (Past cost) ho. 
+*   **$h(n)$** bhaneko ahile ko thau bata goal samma pugna kati lagla vanera guess gareko kharcha (Future cost/Heuristic) ho.
+*   **Algorithm ko idea:** Duita list banaune (OPEN ra CLOSED). Suruma Start node lai OPEN ma halne. Tespachi OPEN list bata sabai vanda kam $f(n)$ (sasto bato) vako node nikalne. Yadi tyo goal ho vane sakkiyo! Haina vane tesko chhimeki (neighbors) haru ko $f(n)$ nikalne ra OPEN list ma halne. Yo process goal navetesamma repeat garirakhne.
