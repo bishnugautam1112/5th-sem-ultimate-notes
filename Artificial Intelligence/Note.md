@@ -519,7 +519,7 @@ To rigorously define a problem for a search algorithm, it must have **5 componen
     3.  **Ridges:** A sequence of local maxima that is very difficult for greedy algorithms to navigate because the algorithm can only move in discrete grid directions, causing it to zigzag inefficiently.
 
 (put a fig here: A 2D landscape graph (State space landscape). Label the x-axis as 'State space' and y-axis as 'Objective function'. Draw a curve showing a 'Global Maximum' (the highest peak), a 'Local Maximum' (a smaller peak), a 'Plateau' (a flat horizontal line), and a 'Current State' point moving up.)
-
+![alt text](image-12.png)
 ### 3.3.2. Simulated Annealing
 *   **Concept:** Inspired by the physical process of metallurgy (annealing), where metals are heated to high temperatures to increase atomic movement, then gradually cooled to form a strong, flawless crystalline structure.
 *   **Mechanism to escape Local Maxima:** 
