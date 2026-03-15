@@ -245,4 +245,100 @@ For example, it will test:
 *   `a -> b -> c -> f -> h` (True)
 *   `a -> e -> d -> g -> h` (True)
 
-*Note: The algorithm above is the standard "simple" version required for 7-8 mark university exams. It returns `true` if a path exists. It doesn't print the list of nodes, which is fine unless the question specifically asks to "return the path list".*
+*Note: The algorithm above is the standard "simple" version required for 7-8 mark university exams. It returns `true` if a path exists. It doesn't print the list of nodes, which is fine unless the question specifically asks to "return the path list".*Here is the complete, high-yield exam guide for **Simulated Annealing**. This topic is a favorite for 7-8 mark long questions or 5 mark short notes.
+
+---
+
+### **1. What is Simulated Annealing? (Definition & Concept)**
+
+**[Exam Ready Note]**
+
+**Definition:**
+Simulated Annealing (SA) is a probabilistic **Local Search Algorithm** used for finding the global optimum (minimum or maximum) of an objective function in a large search space. It is designed specifically to solve the major problem of the **Hill-Climbing algorithm**: getting stuck in *Local Maxima*.
+
+**The Inspiration (Metallurgy):**
+The algorithm gets its name from "Annealing" in metallurgy—a physical process where a metal is heated to a very high temperature (causing its atoms to move randomly) and then gradually cooled down. As it cools slowly, the atoms settle into a stable, low-energy, crystalline state (the optimal structure).
+
+**How it Works (The Core Concept):**
+*   Unlike Hill Climbing (which is greedy and *only* makes moves that improve the situation), Simulated Annealing **allows "bad" moves** (downhill moves).
+*   By occasionally taking a bad move, the algorithm can escape a local maximum peak and explore other parts of the landscape to find the true global maximum peak.
+
+---
+
+### **2. The Algorithm & The "Temperature" Parameter (VVI for Exams)**
+
+**[Exam Ready Note]**
+
+To understand how SA accepts bad moves, you must explain the **Temperature ($T$)** parameter and the acceptance probability function.
+
+**The Mechanism:**
+1.  The algorithm evaluates a neighboring state.
+2.  Let $\Delta E = \text{Value}(\text{Next}) - \text{Value}(\text{Current})$.
+3.  **If the move is GOOD ($\Delta E > 0$):** It is always accepted (just like Hill Climbing).
+4.  **If the move is BAD ($\Delta E < 0$):** It is *not* immediately rejected. Instead, it is accepted with a certain **probability ($P$)**.
+
+**The Probability Formula:**
+The probability of accepting a bad move is calculated using the Boltzmann distribution:
+$$P = e^{\frac{\Delta E}{T}}$$
+*(Where $e$ is Euler's number $\approx 2.718$, $\Delta E$ is the negative change in value, and $T$ is the current Temperature).*
+
+**The Role of Temperature ($T$) & The Cooling Schedule:**
+*   **At the Start (High $T$):** The temperature is very high. The probability $P$ is close to 1. The algorithm accepts almost *any* bad move. It bounces around randomly, exploring the entire landscape.
+*   **During the Process (Cooling):** As time passes, the temperature $T$ is slowly decreased according to a "Cooling Schedule".
+*   **At the End (Low $T \approx 0$):** The temperature is nearly zero. The probability $P$ of accepting a bad move drops to almost 0. The algorithm now behaves exactly like standard, greedy Hill Climbing, climbing to the top of whichever peak it currently happens to be on.
+
+**Conclusion:** If the cooling schedule is slow enough, Simulated Annealing is mathematically guaranteed to find the Global Optimum.
+
+***
+
+**💡 Nepali Core Concept Summary (Neplish):**
+*   **Problem:** Hill Climbing mathi jana matra janeko cha, tesaile sano danda (Local Maxima) lai nai sabai vanda thulo pahaad samjhera fascha.
+*   **Simulated Annealing ko idea:** Falam lai tataera sekaune process jastai. Yesle jani-jani galti garcha (oralo jharne / bad move lincha) taaki tyo sano danda bata baira niskinna sakos.
+*   **Temperature ($T$):** Suru ma $T$ ekdum high huncha, algorithm le dherai bad moves lincha ra purai map explore garcha. Bistarai $T$ chiso hudai jancha (Cooling schedule). $T$ chiso vayepachi yesle bad moves lina banda garcha ra Hill Climbing jastai sidhai mathi gayera Global Maxima (sabai vanda thulo pahaad) bhetaucha.
+*   **Formula:** Exam ma bad move accept garne probability $P = e^{\Delta E / T}$ lekhnai parcha!
+
+---
+
+### **3. Frequently Asked Exam Questions & Solutions**
+
+#### **Q1. When does Simulated Annealing algorithm behave like Hill Climbing? [7 Marks]** *(PU 2017 Spring)*
+**Solution:**
+Simulated Annealing behaves exactly like standard Hill Climbing when the **Temperature parameter ($T$) approaches zero ($T \to 0$)**.
+*   *Explanation:* The probability of accepting a bad (downward) move is given by $P = e^{\Delta E / T}$. When $\Delta E$ is negative (a bad move) and $T$ is extremely close to $0$, the exponent $\frac{\Delta E}{T}$ becomes a very large negative number (e.g., $e^{-\infty}$). 
+*   Therefore, $P$ becomes exactly $0$.
+*   Since the probability of accepting a bad move is $0$, the algorithm will *only* accept moves that improve the current state ($\Delta E > 0$). This is the exact definition of the greedy Hill Climbing algorithm. Thus, at the end of its cooling schedule, SA becomes Hill Climbing to reach the final peak.
+
+#### **Q2. State Simulated Annealing Algorithm. The following table shows three evaluations... Calculate the probability of the next state being accepted. Assume the objective function is being maximized. [8 Marks]** *(NEC Fall)*
+
+| Current Evaluation | Neighbourhood Evaluation | Current Temperature |
+| :--- | :--- | :--- |
+| 80 | 65 | 10 |
+| 80 | 65 | 100 |
+| 80 | 65 | 500 |
+
+*Ensure you show the formula you use and describe the terms.*
+
+**Solution:**
+**1. Formula & Terms:**
+We use the probability acceptance formula: **$P = e^{\frac{\Delta E}{T}}$**
+*   **$\Delta E$ (Delta E):** The change in evaluation value ($\text{Neighbourhood} - \text{Current}$). Since we are maximizing, a negative $\Delta E$ means it's a "bad" move.
+*   **$T$:** The current temperature.
+*   **$e$:** Base of the natural logarithm ($\approx 2.71828$).
+
+**2. Calculations:**
+For all three cases, the Current State = $80$, and the Neighbour State = $65$.
+$\Delta E = 65 - 80 = \mathbf{-15}$ (It's a bad move, so we calculate probability).
+
+**Case 1: $T = 10$**
+*   $P = e^{\frac{-15}{10}} = e^{-1.5}$
+*   **$P \approx 0.2231$ (or $22.31\%$ chance of acceptance)**
+
+**Case 2: $T = 100$**
+*   $P = e^{\frac{-15}{100}} = e^{-0.15}$
+*   **$P \approx 0.8607$ (or $86.07\%$ chance of acceptance)**
+
+**Case 3: $T = 500$**
+*   $P = e^{\frac{-15}{500}} = e^{-0.03}$
+*   **$P \approx 0.9704$ (or $97.04\%$ chance of acceptance)**
+
+*(**Conclusion for the examiner:** This mathematically demonstrates that at higher temperatures ($T=500$), the algorithm is very likely to accept bad moves to explore the space, but as the temperature drops ($T=10$), it becomes very unlikely to accept bad moves).*
