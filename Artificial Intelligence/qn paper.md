@@ -85,3 +85,91 @@ c) Semantic Nets and Frames *(Draw a basic inheritance graph)*
 2.  **Tackle Q3(b) next:** FOL translation is quick and secures 8 marks if your syntax is correct.
 3.  **Draw Diagrams:** For Q6(a) [Expert System], Q1(b) [Agent PEAS], and Q5(b) [NLP], large, well-labeled block diagrams will fetch 80% of the marks even if the text explanation is brief.
 4.  **Formula Drop:** In Q2(b) [A*], always write $f(n)=g(n)+h(n)$. In Q4(b) [Bayes], always write $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$. In Q5(a) [Perceptron], always write $W_{new} = W_{old} + \alpha(Error)X$.
+Based on the provided past papers, the **Pokhara University, 2018 Spring, Q.2.a)** is a Search Algorithm problem represented as a graph.
+
+Here is the exact question from the image, followed by a step-by-step solution that guarantees full marks.
+
+---
+
+### **The Question (PU 2018 Spring, Q.2.a - 8 Marks)**
+
+**What is a state space of a problem? For the given problem represented in a graph, where initial state is "A" and goal state is "C", find all the possible state space.**
+
+*(The question provides a directed graph with nodes A, B, C, D, E, F, G, H. Arrows indicate the allowed direction of movement between nodes).*
+
+**Graph Connections (Extracted from the image):**
+*   **Initial State:** A
+*   **Goal State:** C
+*   **Edges (Directed):**
+    *   $A \rightarrow B$
+    *   $A \rightarrow E$
+    *   $B \rightarrow C$ (Goal)
+    *   $B \rightarrow F$
+    *   $D \rightarrow E$
+    *   $D \rightarrow G$
+    *   $E \rightarrow F$
+    *   $E \rightarrow G$
+    *   $F \rightarrow C$ (Goal)
+    *   $F \rightarrow H$
+    *   $G \rightarrow H$
+
+---
+
+### **Step-by-Step Solution**
+
+#### **Part 1: Define State Space (2 Marks)**
+**Answer:**
+The **state space** of a problem is the mathematical representation of all possible states (situations) that an agent can reach from the initial state by executing any sequence of valid actions. It essentially forms a graph or a tree where:
+*   **Nodes** represent the states.
+*   **Edges** represent the valid actions (transitions) moving the agent from one state to another.
+
+A state space is completely defined by:
+1.  **Initial State:** Where the agent starts.
+2.  **Actions:** The set of possible moves.
+3.  **Transition Model:** The result of taking an action.
+4.  **Goal Test:** Checking if the current state is the goal state.
+
+---
+
+#### **Part 2: Find all possible state spaces (paths) from A to C (6 Marks)**
+
+**Goal:** To find every unique, valid path starting at **A** and ending exactly at **C**, following only the direction of the arrows.
+
+We will trace this systematically using a tree-expansion method (Depth-First approach) to ensure no path is missed.
+
+**Step 1: Start at Initial State A.**
+From A, we can only go to B or E.
+*   Path 1 starts: $A \rightarrow B$
+*   Path 2 starts: $A \rightarrow E$
+
+**Step 2: Expand Path 1 ($A \rightarrow B$)**
+From B, we can go to C or F.
+*   *Option 1.1:* $A \rightarrow B \rightarrow C$.
+    *   **Node C is the Goal State.** This is our first complete path! **(Path 1 Found)**
+*   *Option 1.2:* $A \rightarrow B \rightarrow F$.
+    *   From F, we can go to C or H.
+        *   $A \rightarrow B \rightarrow F \rightarrow C$.
+            *   **Node C is the Goal State.** **(Path 2 Found)**
+        *   $A \rightarrow B \rightarrow F \rightarrow H$. Node H is a dead-end (no arrows pointing out). This path fails.
+
+**Step 3: Expand Path 2 ($A \rightarrow E$)**
+From E, we can go to F or G.
+*   *Option 2.1:* $A \rightarrow E \rightarrow F$.
+    *   From F, we can go to C or H.
+        *   $A \rightarrow E \rightarrow F \rightarrow C$.
+            *   **Node C is the Goal State.** **(Path 3 Found)**
+        *   $A \rightarrow E \rightarrow F \rightarrow H$. Node H is a dead end. Fails.
+*   *Option 2.2:* $A \rightarrow E \rightarrow G$.
+    *   From G, we can only go to H.
+        *   $A \rightarrow E \rightarrow G \rightarrow H$. Node H is a dead end. Fails.
+
+*(Note: Node D is completely inaccessible from the starting node A because arrows only point OUT of D, not into it. Therefore, any paths involving D are impossible).*
+
+---
+
+#### **Final Answer / Conclusion**
+The possible state space (the set of all valid paths) to reach Goal State **C** from Initial State **A** consists of the following **3 unique paths**:
+
+1.  **Path 1:** $A \rightarrow B \rightarrow C$
+2.  **Path 2:** $A \rightarrow B \rightarrow F \rightarrow C$
+3.  **Path 3:** $A \rightarrow E \rightarrow F \rightarrow C$
