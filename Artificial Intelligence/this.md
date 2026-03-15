@@ -402,3 +402,80 @@ I have grouped them by chapter and sub-topics so you can easily spot the most re
 
 ***
 *Note: Looking at these past papers, **Crypt-arithmetic problems (CSP), PEAS descriptions, A\* Search, and Hill Climbing limitations** are repeatedly asked in almost every exam. You should definitely master these topics!*
+
+
+Here is the complete, categorized list of all the questions asked from **Chapter 4, Chapter 6, and Chapter 7** of the **Artificial Intelligence** syllabus, carefully extracted from the past exam papers in your PDF.
+
+---
+
+### **Chapter 4: Knowledge Representation and Reasoning**
+
+**1. Propositional Logic & Truth Tables**
+*   What are the drawbacks of propositional logic? How are they resolved in predicate logic? Explain in detail. *(Pokhara University - School of Engineering)*
+*   Given the propositional statements p: "It is raining" and q: "The road is wet", write the logical expressions for the following: i. If it is not sunny, then the picnic will not happen... *(Universal Engineering & Science College)*
+*   Using the truth table prove that $p \iff q$ is equivalent to $(p \implies q) \land (q \implies p)$. *(Universal Engineering & Science College)*
+*   Explain the steps involved in Conjunctive Normal Form (CNF). Discuss the inference rule for propositional logic with example. *(Everest Engineering College)*
+*   Convert $B \iff (P \lor Q)$ into conjunctive normal form (CNF). *(Gandaki College of Engineering and Science)*
+
+**2. Predicate Logic (First-Order Logic - FOL) Representation**
+*   What are the steps to convert a First-Order Predicate Logic (FOPL) sentence to clausal form? Provide a detailed step-by-step procedure... Consider the sentence: "Everyone who loves all animals is loved by someone." *(Nepal Engineering College)*
+*   Represent the following facts in predicate logic: i) John likes all kind of food. ii) Apple and vegetable are food. iii) Anything anyone eats and not killed is food. iv) Anil eats peanuts and still alive. v) Harry eats everything that Anil eats. *(Madan Bhandari College of Engineering)*
+*   Represent following sentences with predicate logic: i. Every gardener likes the sun. ii. All purple mushrooms are poisonous. iii. No purple mushrooms are poisonous. iv. A car have at least one door. *(Gandaki College of Engineering and Science)*
+
+**3. Resolution & Theorem Proving**
+*   Consider the following facts: 1. All hounds howl at night. 2. Anyone who has any cats will not have any mice. 3. Light sleepers do not have anything which howls at night. 4. John has either a cat or a hound. 5. John is a light sleeper. Using resolution prove that John does not have any mice. *(Pokhara University - School of Engineering)*
+*   Prove the following using Resolution Refutation System: All those who honour both their parents are blessed. If anyone dislikes any of his siblings, one does not honour one’s parents. Raju likes his sister Rita. Therefore, Raju is blessed. *(Nepal Engineering College)*
+*   Assume the following facts: Steve only likes easy courses. Science courses are hard. All the courses in the basket weaving department are easy. BK301 is a basket weaving course. Use resolution to answer the question, "What course would Steve like?" *(Universal Engineering & Science College)*
+*   Assume the following facts: Horses, cows, pigs are mammals. An offspring of a horse is a horse. Bluebeard is a horse. Bluebeard is a Charlie’s parent. Offspring and parent are inverse relations. Every mammal has a parent. Prove that “Charlie is a horse” using resolution. *(Everest Engineering College)*
+*   Consider the facts given in Q.3 b) using resolution prove that John likes peanuts. *(Madan Bhandari College of Engineering)*
+
+**4. Reasoning Under Uncertainty (Probability, Bayes Theorem & Bayesian Networks)**
+*   Define reasoning under uncertainty. Explain a Bayesian Network with an suitable example. *(Pokhara University - School of Engineering)*
+*   Analyze the given graph and find the probability of holiday given that there is rain, and hailstorm. [Network diagram provided in question paper]. *(Everest Engineering College)*
+*   Write short notes on: Probability and Bayes Theorem. *(Universal Engineering & Science College)*
+*   Write short notes on: Hidden Markov Model. *(Everest Engineering College)*
+*   Write short notes on: Baysian Network. *(Gandaki College of Engineering and Science)*
+
+**5. Other KR Approaches (Semantic Nets & Frames)**
+*   What is a partition semantic net? Represent the following sentences in a semantic network: Every dog had bitten a postman. *(Nepal Engineering College)*
+*   Differentiate between semantic nets and frames. *(Everest Engineering College)*
+*   Represent the following sentences into a semantic network: i. Birds are animals. ii. Birds have feathers, fly and lay eggs. iii. Albatross is a bird. iv. Donald is a bird. v. Tracy is an albatross. *(Gandaki College of Engineering and Science)*
+*   Write short notes on: Semantic Nets. *(Pokhara University - School of Engineering)*
+*   Write short notes on: Frame. *(Nepal Engineering College)*
+
+---
+
+### **Chapter 6: Fuzzy Logic**
+
+**1. Concepts, Sets & Operations**
+*   Define a fuzzy logic. *(Pokhara University - School of Engineering)*
+*   What is fuzzy logic? Explain its core concepts and discuss the main fuzzy set operations (union, intersection, and complement) with examples. *(Nepal Engineering College)*
+*   Write short notes on: fuzzy logic. *(Madan Bhandari College of Engineering)*
+
+**2. Fuzzification, Defuzzification & Membership Functions**
+*   Define membership functions. Discuss the method of fuzzification and defuzzification with an example. *(Everest Engineering College)*
+*   Explain fuzzification and defuzzification with suitable examples. *(Gandaki College of Engineering and Science)*
+
+**3. Fuzzy Inference System (Mamdani FIS)**
+*   Explain the components of fuzzy inference system. *(Pokhara University - School of Engineering)*
+*   Explain a Mamdani fuzzy inference system with any suitable example. *(Pokhara University - School of Engineering)*
+
+---
+
+### **Chapter 7: Expert System**
+
+**1. Architecture & Components**
+*   What is an expert system? Explain the architecture of an expert system. *(Everest Engineering College)*
+*   What is Expert System? Explain the architecture of expert system in detail. *(Madan Bhandari College of Engineering)*
+*   What is expert system? Explain architecture of expert system with necessary diagram. *(Gandaki College of Engineering and Science)*
+*   Write short notes on: Expert system. *(Universal Engineering & Science College)*
+
+**2. Importance & Need**
+*   Explain the importance and need of an expert system. *(Pokhara University - School of Engineering)*
+
+**3. Inference Mechanisms (Forward & Backward Chaining)**
+*   Write short notes on: Inference Mechanism. *(Everest Engineering College)*
+*   Write short notes on: Forward and backward chaining. *(Gandaki College of Engineering and Science)*
+
+***
+*Exam Tip: Based on these past papers, **Resolution Theorem Proving (Word problem to logic to proof)** and **Translating English to Predicate Logic (FOL)** are guaranteed 8-mark long questions. In Chapter 6 and 7, **Fuzzification/Defuzzification** and **Expert System Architecture** are the most frequently asked questions!*
