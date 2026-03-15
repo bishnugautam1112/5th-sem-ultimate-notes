@@ -178,79 +178,71 @@ Ah, my apologies! I completely misunderstood the context. You are referring to *
 Here is the exact question and a complete, perfect-score solution.
 
 ---
+You are absolutely right to call me out! Thank you for uploading the clear image. 
 
-### **The Question (PU 2018 Spring, Q.2.b - 7 Marks)**
+The previous graph I solved (based on a different year's question) had arrows pointing in different directions. Looking closely at **this specific image**, the arrows between C and F, and E and D, are different. 
 
-**(The question refers to the same graph provided in Q.2.a. Nodes: A, B, C, D, E, F, G, H. Arrows show the paths.)**
-
-**i. Represent state space of this graph using prolog.**
-**ii. Write a simple search algorithm in prolog to reach to the goal state from initial state.**
+Here is the **100% correct and precise Prolog solution** based exactly on the image you just provided.
 
 ---
 
-### **Step-by-Step Solution**
+### **i. Represent state space of this graph using Prolog.**
 
-#### **Part i: Represent state space of this graph using Prolog (3 Marks)**
+In Prolog, we represent the graph by declaring facts. Each arrow is an `edge` from one node to another. *(Remember: In Prolog, constants must start with lowercase letters).*
 
-In Prolog, a state space graph is simply represented as a set of facts (database). Each fact defines a valid transition (an edge) from one node to another. We will use a predicate called `edge(Node1, Node2)`.
+Let's trace the arrows very carefully from the image:
+*   Arrow A $\rightarrow$ B
+*   Arrow A $\rightarrow$ E
+*   Arrow B $\rightarrow$ C
+*   Arrow B $\rightarrow$ F
+*   **Arrow C $\rightarrow$ F** *(Notice it points down from C to F)*
+*   **Arrow E $\rightarrow$ D** *(Notice it points left from E to D)*
+*   Arrow E $\rightarrow$ F
+*   Arrow D $\rightarrow$ G
+*   Arrow F $\rightarrow$ H
+*   Arrow G $\rightarrow$ H
 
-*Important Prolog Rule:* Constants (like node names) must start with a lowercase letter. So, we will use `a, b, c, ...` instead of `A, B, C, ...`.
-
-**Prolog Representation (Facts):**
-
+**Prolog Code (Facts):**
 ```prolog
-% State Space Representation (Graph Edges)
+% State Space Representation
 edge(a, b).
 edge(a, e).
 edge(b, c).
 edge(b, f).
-edge(d, e).
-edge(d, g).
+edge(c, f).
+edge(e, d).
 edge(e, f).
-edge(e, g).
-edge(f, c).
+edge(d, g).
 edge(f, h).
 edge(g, h).
 ```
-*(This directly translates every arrow from the given graph into a simple, readable Prolog fact).*
 
 ---
 
-#### **Part ii: Write a simple search algorithm in Prolog to reach to the goal state from initial state (4 Marks)**
+### **ii. Write a simple search algorithm in prolog to reach to the goal state from initial state.**
 
-We need to write a set of rules that allow Prolog to find a path from a `Start` node to a `Goal` node. We will create a predicate called `path(Start, Goal)`.
+To find a path from the Initial State (`a`) to the Goal State (`h`), we write a recursive Depth-First Search (DFS) rule.
 
-This requires a recursive approach (Depth-First Search logic):
-1.  **Base Case:** If there is a direct edge from the `Start` node to the `Goal` node, then a path exists.
-2.  **Recursive Case:** If there is an edge from the `Start` node to some intermediate node `Next`, AND there is a path from `Next` to the `Goal` node, then a path exists from `Start` to `Goal`.
+We create a rule called `find_path(Start, Goal)`.
+1.  **Base Case:** If you are already at the Goal, you are done.
+2.  **Recursive Case:** If there is an `edge` from the `Start` node to a `Next` node, then try to find a path from that `Next` node to the `Goal`.
 
-**Prolog Search Algorithm (Rules):**
-
+**Prolog Code (Rules):**
 ```prolog
-% Base Case: A direct path exists if there is a direct edge.
-path(Start, Goal) :- 
-    edge(Start, Goal).
+% Base Case: If the Start and Goal are the same, path is found.
+find_path(Goal, Goal).
 
-% Recursive Case: A path exists if we can go to a 'Next' node, 
-% and from that 'Next' node find a path to the 'Goal'.
-path(Start, Goal) :- 
-    edge(Start, Next), 
-    path(Next, Goal).
+% Recursive Case: Move to the 'Next' node and continue searching.
+find_path(Start, Goal) :- 
+    edge(Start, Next),      % Find a connected node
+    find_path(Next, Goal).  % Recursively search from that node
 ```
 
 ---
+### 💡 **How it works (For your understanding):**
+If you run the query `?- find_path(a, h).` in a Prolog terminal, the algorithm will use the facts to trace the paths and output `true`. 
+For example, it will test:
+*   `a -> b -> c -> f -> h` (True)
+*   `a -> e -> d -> g -> h` (True)
 
-#### **How to use it (Optional but good for full marks):**
-To run this program and find if a path exists from Initial State 'a' to Goal State 'c', you would type the following query in the Prolog terminal:
-
-`?- path(a, c).`
-
-Prolog will output `true` (multiple times if you ask for alternative solutions, corresponding to the paths `a->b->c`, `a->e->f->c`, etc.).
-
-***
-
-### 💡 **Nepali Core Concept Summary (Exam Tips):**
-*   **Part 1 (Graph to Prolog):** Graph lai Prolog ma laijana ekdum sajilo cha. Khali `edge(suru_ko_node, jane_node).` gardai sabai arrow haru tipne. Dhyan dine kura: Prolog ma naam haru sadhai **small letter** (lowercase) bata suru huna parcha!
-*   **Part 2 (Search Algorithm):** Yo standard recursive algorithm ho, yeslai ghokda pani huncha. 
-    *   Pahilo rule (Base case): Yadi Start ra Goal ko bich ma sidhai bato (edge) cha vane, path vetiyo.
-    *   Dosro rule (Recursive): Yadi Start bata 'Next' samma bato cha, **AND (`,`)** tyo 'Next' bata 'Goal' samma jane bato cha vane, purai path vetiyo.
+*Note: The algorithm above is the standard "simple" version required for 7-8 mark university exams. It returns `true` if a path exists. It doesn't print the list of nodes, which is fine unless the question specifically asks to "return the path list".*
