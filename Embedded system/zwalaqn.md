@@ -99,7 +99,7 @@ $$X(z) = \frac{a z \sin(w_c)}{z^2 - 2az \cos(w_c) + a^2}$$
 
 *(Note: Providing the full derivation above along with the explicit ROC is what typically earns the full 8 marks in a university examination).*
 Based on the text in the image, there appears to be a typo where the mathematical equation for the "input signal" has been omitted. The text reads "...representing samples of an input signal The link...", missing the signal itself. 
-
+![alt text](image.png)
 I will first provide the solution based strictly on the parameters given in the text. Then, I will provide a complete solution by making a likely assumption about the missing signal based on standard variations of this problem and faint handwritten marks visible in the image.
 
 ### Part 1: Solution based purely on printed text
