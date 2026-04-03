@@ -166,3 +166,74 @@ For $x(t) = 3 \cos(600\pi t) + 2 \cos(1800\pi t)$:
 *   Voltage range $V_{pp} = 5 \text{ V} - (-5 \text{ V}) = 10 \text{ V}$
 
 $$\text{Resolution } (\Delta) = \frac{V_{pp}}{L} = \frac{10 \text{ V}}{512} \approx \mathbf{0.0195 \text{ V}} \text{ (or } 19.5 \text{ mV)}$$
+
+![
+    
+    Here are the step-by-step solutions for each part of the problem.
+
+First, let's analyze the given continuous-time (analog) signal:
+$$x_a(t) = 3\cos(100\pi t)$$
+
+A general sinusoidal signal is written as $x_a(t) = A\cos(\Omega t) = A\cos(2\pi F_{max} t)$, where:
+*   $A$ is the amplitude.
+*   $\Omega$ is the continuous-time angular frequency in radians per second.
+*   $F_{max}$ is the continuous-time frequency in Hertz (Hz).
+
+By comparing our signal to the general form, we can find its frequency:
+$$\Omega = 100\pi \text{ rad/sec}$$
+$$2\pi F_{max} = 100\pi$$
+$$F_{max} = \frac{100\pi}{2\pi} = \mathbf{50 \text{ Hz}}$$
+
+---
+
+### **i) Determine the minimum sampling rate required to avoid aliasing.**
+
+According to the Nyquist-Shannon sampling theorem, to reconstruct a continuous-time signal from its samples without aliasing, the sampling rate ($F_s$) must be strictly greater than twice its highest frequency component.
+$$F_s > 2 \cdot F_{max}$$
+$$F_s > 2 \cdot 50 \text{ Hz}$$
+$$F_s > 100 \text{ Hz}$$
+
+Therefore, the minimum required sampling rate to theoretically avoid aliasing is **$100 \text{ Hz}$** (this boundary value is referred to as the Nyquist rate).
+
+---
+
+### **ii) What is the Nyquist rate for the signal $X_a(t)$?**
+
+The Nyquist rate is defined exactly as twice the maximum frequency component present in the signal.
+$$\text{Nyquist rate} = 2 \cdot F_{max}$$
+$$\text{Nyquist rate} = 2 \cdot 50 \text{ Hz} = \mathbf{100 \text{ Hz}}$$
+
+---
+
+### **iii) If the signal is sampled at the rate $F_s = 200\text{Hz}$. What is the discrete-time signal obtain after sampling?**
+
+Sampling a continuous-time signal $x_a(t)$ at a rate $F_s$ means substituting continuous time $t$ with discrete time intervals $nT_s$, where $T_s = \frac{1}{F_s}$ is the sampling period and $n$ is an integer representing the sample number. So, $t = \frac{n}{F_s}$.
+
+Given $F_s = 200 \text{ Hz}$:
+$$t = \frac{n}{200}$$
+
+Substitute this $t$ into the original analog signal equation to get the discrete-time signal $x(n)$:
+$$x(n) = x_a(nT_s) = 3\cos\left(100\pi \left(\frac{n}{200}\right)\right)$$
+$$x(n) = 3\cos\left(\frac{100\pi}{200} n\right)$$
+**$$x(n) = 3\cos\left(\frac{\pi}{2} n\right)$$**
+
+---
+
+### **iv) What is the frequency $0 < F < F_s/2$ of a sinusoid that yields samples identical to those obtained for $F_s=200\text{Hz}$**
+
+First, let's determine the specified frequency range:
+$$F_s / 2 = 200 / 2 = 100 \text{ Hz}$$
+So, we are looking for a frequency $F$ such that **$0 < F < 100 \text{ Hz}$**. This is known as the baseband or principal alias range.
+
+The discrete-time signal we obtained in part (iii) is $x(n) = 3\cos\left(\frac{\pi}{2} n\right)$.
+The general form of a discrete-time sinusoid is $x(n) = A\cos(2\pi f n)$, where $f$ is the discrete-time frequency in cycles/sample.
+By comparing the two:
+$$2\pi f = \frac{\pi}{2}$$
+$$f = \frac{1}{4} \text{ cycles/sample}$$
+
+The relationship between discrete-time frequency ($f$), continuous-time frequency ($F$), and sampling rate ($F_s$) is $f = \frac{F}{F_s}$. Let's solve for $F$:
+$$\frac{1}{4} = \frac{F}{200}$$
+$$F = \frac{200}{4} = \mathbf{50 \text{ Hz}}$$
+
+Since $50 \text{ Hz}$ falls within the required range ($0 < 50 < 100$), this is the correct answer. Because the original signal was sampled at a rate ($200 \text{ Hz}$) higher than the Nyquist rate ($100 \text{ Hz}$), **no aliasing occurred**. The sinusoid in the baseband that produces these samples is simply the original signal itself.
+](image-1.png)
